@@ -3,13 +3,5 @@ tar -xvzf archive_graph.tar.gz
 docker run -p 5432:5432 --rm -d -v $(pwd)/:/root/ --name psql postgres:alpine
 echo 'Docker running'
 sleep 1s
-docker exec -i psql bash -c "sed -i 1d /root/social_network_nodes.csv"
-docker exec -i psql bash -c "sed -i 1d /root/social_network_edges.csv"
-echo 'header lines removes'
-docker exec -i psql bash -c "psql -U postgres -c 'CREATE TABLE vertex(id INTEGER PRIMARY KEY, name VARCHAR, job VARCHAR, birthday VARCHAR);'"
-docker exec -i psql bash -c "psql -U postgres -c 'CREATE TABLE edges(source INTEGER references vertex(id), dest INTEGER references vertex(id));'"
-echo 'tables created'
-docker exec -i psql bash -c "psql -U postgres -c '\copy vertex FROM /root/social_network_nodes.csv DELIMITER ',' CSV'"
-docker exec -i psql bash -c "psql -U postgres -c '\copy edges FROM /root/social_network_edges.csv DELIMITER ',' CSV'"
-echo 'data imported'
+wget -O - https://raw.githubusercontent.com/DanielHauge/DBEX9/master/ImportSQL.sh | bash
 
