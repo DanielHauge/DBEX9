@@ -16,8 +16,8 @@ sudo docker run -d --name neo4j --rm --publish=7474:7474 --publish=7687:7687 --v
 sudo docker exec neo4j sh -c 'neo4j stop'
 sudo docker exec neo4j sh -c 'rm -rf data/databases/graph.db'
 sudo docker exec neo4j sh -c 'neo4j-admin import \
-      --nodes:Person import/social_network_nodes_small.csv \
-      --relationships:ENDORSES import/social_network_edges_small.csv \
+      --nodes:Person import/social_network_nodes.csv \
+      --relationships:ENDORSES import/social_network_edges.csv \
       --ignore-missing-nodes=true \
       --ignore-duplicate-nodes=true \
       --id-type=INTEGER'
