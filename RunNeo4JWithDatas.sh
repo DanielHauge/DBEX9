@@ -22,6 +22,6 @@ sudo docker exec neo4j sh -c 'neo4j-admin import \
       --ignore-missing-nodes=true \
       --ignore-duplicate-nodes=true \
       --id-type=INTEGER'
-sudo docker restart neo4j	  
+sudo docker exec neo4j sh -c 'neo4j start'	  
 
 	
