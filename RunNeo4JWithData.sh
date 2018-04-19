@@ -4,6 +4,8 @@ sudo mkdir plugins
 sudo wget -P /root/import https://github.com/datsoftlyngby/soft2018spring-databases-teaching-material/raw/master/data/archive_graph.tar.gz
 sudo tar -xvzf /root/import/archive_graph.tar.gz
 sudo rm /root/import/archive_graph.tar.gz
+sudo mv /root/social_network_edges.csv /root/import/social_network_edges.csv
+sudo mv /root/social_network_nodes.csv /root/import/social_network_nodes.csv
 sudo sed -i -E '1s/.*/:ID,name,job,birthday/' import/social_network_nodes.csv
 sudo sed -i -E '1s/.*/:START_ID,:END_ID/' import/social_network_edges.csv
 
