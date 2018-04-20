@@ -6,25 +6,13 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.33.10"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "2048"
+    vb.memory = "8096"
 
   end
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
       sudo apt-get update
-
-      sudo echo "LC_ALL=\"en_US.UTF-8\"" >> /etc/environment
-      sudo locale-gen UTF-8
-
-      sudo apt-get install -y git
-      sudo apt-get install -y wget
-      sudo apt-get install -y apt-transport-https ca-certificates curl 
-software-properties-common
-      curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo 
-apt-key add -
-      sudo add-apt-repository "deb [arch=amd64] 
-https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-      sudo apt-get update
-      sudo apt-get install -y docker-ce
+	  sudo wget -O - https://bit.ly/docker-install | bash
+      
 
       echo 
 "==================================================================="
