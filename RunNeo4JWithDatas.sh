@@ -15,6 +15,7 @@ sudo wget -P $(pwd)/plugins https://github.com/neo4j-contrib/neo4j-graph-algorit
 
 sudo docker run -d --name neo4j --publish=7474:7474 --publish=7687:7687 -v $(pwd)/import:/var/lib/neo4j/import -v $(pwd)/plugins:/var/lib/neo4j//plugins --env NEO4J_dbms_memory_pagecache_size=6G --env=NEO4J_dbms_memory_heap_max__size=10G --env NEO4J_AUTH=neo4j/class --env=NEO4J_dbms_security_procedures_unrestricted=apoc.\\\*,algo.\\\* neo4j
 <<<<<<< HEAD
+<<<<<<< HEAD
 sudo wget https://raw.githubusercontent.com/DanielHauge/DBEX9/master/importGraph.sh
 sudo chmod +x importGraph.sh
 sudo ./importGraph.sh
@@ -25,5 +26,8 @@ sudo docker exec neo4j sh -c 'rm -rf data/databases/graph.db'
 sudo docker exec -t neo4j sh -c 'neo4j-admin import --nodes:Person import/social_network_nodes.csv --relationships:ENDORSES import/social_network_edges.csv --ignore-missing-nodes=true --ignore-duplicate-nodes=true --id-type=INTEGER'
 sudo docker restart neo4j	  
 >>>>>>> 6e7e6a85bcb1931bfcfe0b90b1058cb2fae3399c
+=======
+	  
+>>>>>>> f28ea17531467f8f0b42ad3b9497018265a345ab
 
 	
