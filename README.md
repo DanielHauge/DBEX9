@@ -29,6 +29,8 @@ The experiment will be as follows: From a pre-existing dataset, which consists o
 Both database queries will use the same parameters. ie. The same persons, job, name to search for et cetera.
 
 ### Results
+Note: These results are after indexing of both databases. See Execution sub-results for the unindexed results. (It will affect all except depth searches.)
+
 #### Graph database
 Query | Average | Median
 -----:|:-------:|:---------
@@ -37,25 +39,51 @@ Depth 2 |
 Depth 3 |
 Depth 4 |
 Depth 5 |
+Id |
 Job |
 Name |
-Endorsing |
-Endorsment |
+Birthday |
+Endorsing count |
+Endorsment count |
 
 #### SQL database
 Query | Average | Median
 -----:|:-------:|:---------
-Depth 1 | |
-Depth 2 | |
-Depth 3 | |
-Depth 4 | |
-Depth 5 | |
-Job | |
-Name | |
-Endorsing | |
-Endorsment | |
-
+Depth 1 |
+Depth 2 |
+Depth 3 |
+Depth 4 |
+Depth 5 |
+Id |
+Job |
+Name |
+Birthday |
+Endorsing count |
+Endorsment count |
 
 ### Conclusion
 
-### Execution setup (Reproducable)
+### Execution
+#### Enviroment
+Vagrant VM and docker
+
+##### Specs
+
+
+##### Reproductions instructions.
+(How to simulate the same results)
+
+#### Executions
+(What i did to run the tests)
+
+#### Result set 1
+(What initial tests show)
+
+#### Result set 2
+(what second tests show)
+
+
+
+
+
+
