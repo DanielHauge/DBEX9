@@ -15,7 +15,7 @@ Considering the question at hand. We need to consider the circumstances and what
 ### Tests / Experiments
 To test the hypothesis, we can setup an experiment.
 
-The experiment will be as follows: From a pre-existing dataset, which consists of people with jobs, names and connections(endorsments) to other people). Meassure average and median query runtime on predetermined queries for both database systems. The queries are as follows:
+The experiment will be as follows: From a pre-existing dataset, which consists of people with jobs, names, birthdays and connections(endorsments) to other people). Meassure average and median query runtime on predetermined queries for both database systems. The queries are as follows:
 - All person that a person endorses (Depth one)
 - All person that are endorsed by endorsed persons of a person (Depth two)
 - Endorsements of depth three
