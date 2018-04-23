@@ -67,7 +67,12 @@ Endorsment count |
 Vagrant VM and docker
 
 ##### Specs
-
+Localmachine has the following specs:
+Relevant specs: 
+ - Processor: Intel(R) Core(TM) i5-3570k CPU @ 3.40GHz 3.4 GHz
+ - RAM: 8 GB
+ - OS: Windows 10 Home edition (With all available updates)
+Virtual machine: [vagrantfile](#vagrantfile) 
 
 ##### Reproductions instructions.
 (How to simulate the same results)
@@ -75,8 +80,27 @@ Vagrant VM and docker
 #### Executions
 (What i did to run the tests)
 
-#### Result set 1
-(What initial tests show)
+##### 1: Initial Experiments
+note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine.
+
+I ran the first tests. Not all tests completed because neo4j chrashed because of memory issues. My guess is that it was including everything and not having only distinct users. Also i suspect that Neo4j uses absurdly huge amounts of ram. So i will try to add more ram to the next execution. 
+
+See [IntitialTest output gist](https://gist.github.com/DanielHauge/6d8d007ecfe3d76e26898126225589ab)
+
+Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
+-----:|:-------:|:---------|:-------:|:---------
+Depth 1 | 777ms | 772ms | 125ms | 24ms |
+Depth 2 | 1.8s | 1.8s | 261ms | 156ms|
+Depth 3 | 3s | 3s | 518ms | 210ms |
+Depth 4 | 6.5s | 6.2s | 4.2s | 2.8s |
+Depth 5 | 12.5s | 11.9s | N/A | N/A
+Job | 58ms | 57ms | N/A | N/A
+Name | 53ms | 54ms | N/A | N/A
+Birthday | 64ms | 63ms | N/A | N/A
+Endorsing count | 9.8s | 9.8s | N/A | N/A
+Endorsment count | 13.5s | 13.5s | N/A | N/A
+
+Disregarding missing data. We can stil see very promising results when it comes to finding nested relations. As hypothesized, the sql database seems slower when it comes to finding the relations by relationships. Neo4j is many times faster for 1,2 and 3 depth, but is starting to halt on the 4th, and crashed on the 5h level. I suspect that the level 4 query on neo4j is alot faster, but because of ram and memory shortage it is starting to halt, but also because it wasn't distincting persons.
 
 #### Result set 2
 (what second tests show)
