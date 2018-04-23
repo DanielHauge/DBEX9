@@ -72,6 +72,7 @@ Relevant specs:
  - Processor: Intel(R) Core(TM) i5-3570k CPU @ 3.40GHz 3.4 GHz
  - RAM: 8 GB
  - OS: Windows 10 Home edition (With all available updates)
+ 
 Virtual machine: [vagrantfile](#vagrantfile) 
 
 ##### Reproductions instructions.
