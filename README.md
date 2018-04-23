@@ -30,7 +30,7 @@ The experiment will be as follows: From a pre-existing dataset, which consists o
 Both database queries will use the same parameters. ie. The same persons, job, name to search for et cetera.
 
 ### Results
-Note: This is after indexing. See [Executions](#Executions)
+Note: This is after indexing. See [Executions](#executions)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
