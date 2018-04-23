@@ -32,32 +32,17 @@ Both database queries will use the same parameters. ie. The same persons, job, n
 ### Results
 Note: These results are after indexing of both databases. See Execution sub-results for the unindexed results. (It will affect all except depth searches.)
 
-#### Graph database
-Query | Average | Median
------:|:-------:|:---------
-Depth 1 |
-Depth 2 |
-Depth 3 |
-Depth 4 |
-Depth 5 |
-Job |
-Name |
-Birthday |
-Endorsing count |
-Endorsment count |
-
-#### SQL database
-Query | Average | Median
------:|:-------:|:---------
-Depth 1 |
-Depth 2 |
-Depth 3 |
-Depth 4 |
-Depth 5 |
-Job |
-Name |
-Birthday |
-Endorsing count |
+Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
+-----:|:-------:|:---------|:-------:|:---------
+Depth 1 | 
+Depth 2 | 
+Depth 3 | 
+Depth 4 | 
+Depth 5 | 
+Job | 
+Name | 
+Birthday | 
+Endorsing count | 
 Endorsment count |
 
 ### Conclusion
@@ -73,18 +58,42 @@ Relevant specs:
  - RAM: 8 GB
  - OS: Windows 10 Home edition (With all available updates)
  
-Virtual machine: [vagrantfile](#DBEX9/vagrantfile) 
+Virtual machine: [vagrantfile](https://github.com/DanielHauge/DBEX9/blob/master/vagrantfile) 
 
 ##### Reproductions instructions.
-(How to simulate the same results)
+To setup the same experiments. Do the following: (It is assumed linux is used)
+
+- Step 1. Install docker
+```
+wget -O - http://get.docker.com | bash
+```
+- step 2. Setup SQL database (This script will setup docker container and also import relevant data)
+```
+wget -O - https://raw.githubusercontent.com/DanielHauge/DBEX9/master/RunSQLOnly.sh | bash
+```
+- Step 3. Setup Neo4J database ((This script will setup docker container)
+```
+wget -O - https://raw.githubusercontent.com/DanielHauge/DBEX9/master/RunNeo4JWithDatas.sh | bash
+```
+- Step 4. Import data to Neo4j
+```
+./importGraph.sh
+```
+- Step 5a. Run the benchmarking application
+```
+sudo docker run
+```
+- Step 5b. Run the benchmarking application detached to file
+```
+sudo docker run
 
 #### Executions
-(What i did to run the tests)
+To experiment, i've developed a simple benchmarking program in golang. With functions to integrate with both neo4j and sql with similar inputs and outputs. Note, that results will also affect which given language is used. It should be noted that Neo4j does not have a official driver for golang, therefor the results does not apply 100% to all circumstances in integration of every language.
 
 ##### 1: Initial Experiments
-note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine.
+note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine, both databases is running in different docker containers on the same virtual machine.
 
-I ran the first tests. Not all tests completed because neo4j chrashed because of memory issues. My guess is that it was including everything and not having only distinct users. Also i suspect that Neo4j uses absurdly huge amounts of ram. So i will try to add more ram to the next execution. 
+I ran the first experiments. Not all experiments completed because neo4j chrashed because of memory issues. My guess is that it was including everything and not having only distinct users. Also i suspect that Neo4j uses absurdly huge amounts of ram. So i will try to add more ram to the next execution. 
 
 See [IntitialTest output gist](https://gist.github.com/DanielHauge/6d8d007ecfe3d76e26898126225589ab)
 
@@ -103,8 +112,26 @@ Endorsment count | 13.5s | 13.5s | N/A | N/A
 
 Disregarding missing data. We can stil see very promising results when it comes to finding nested relations. As hypothesized, the sql database seems slower when it comes to finding the relations by relationships. Neo4j is many times faster for 1,2 and 3 depth, but is starting to halt on the 4th, and crashed on the 5h level. I suspect that the level 4 query on neo4j is alot faster, but because of ram and memory shortage it is starting to halt, but also because it wasn't distincting persons.
 
-#### Result set 2
-(what second tests show)
+#### Second Experiments
+note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine, both databases is running in different docker containers on the same virtual machine.
+
+See [Secondtest output gist]()
+
+Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
+-----:|:-------:|:---------|:-------:|:---------
+Depth 1 | 
+Depth 2 | 
+Depth 3 | 
+Depth 4 | 
+Depth 5 | 
+Job | 
+Name | 
+Birthday | 
+Endorsing count | 
+Endorsment count |
+
+
+
 
 
 
