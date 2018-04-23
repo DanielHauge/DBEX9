@@ -120,7 +120,7 @@ Endorsment count | 13.5s | 13.5s | N/A | N/A
 Disregarding missing data. We can stil see very promising results when it comes to finding nested relations. As hypothesized, the sql database seems slower when it comes to finding the relations by relationships. Neo4j is many times faster for 1,2 and 3 depth, but is starting to halt on the 4th, and crashed on the 5h level. I suspect that the level 4 query on neo4j is alot faster, but because of ram and memory shortage it is starting to halt, but also because it wasn't distincting persons.
 
 #### 2: Neo4j query upgade + Ram upgrade
-I shifted to a stronger machine with more ram. Since my computer only has 8gb ram. This also means the processor will get slower, so the numbers might look different. but the propotions should stay intact.
+I shifted to a stronger machine with more ram.
 
 From previusly, it looks like it is true that neo4j uses lots and lots of ram.
 
