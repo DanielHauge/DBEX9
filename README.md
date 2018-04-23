@@ -32,6 +32,10 @@ Both database queries will use the same parameters. ie. The same persons, job, n
 ### Results
 Note: This is after indexing. See [Executions](#executions)
 
+See [sql index output](https://gist.github.com/DanielHauge/e05dea4bf6eaee7d25c5e68a18af72e5)
+
+See [neo4j index output](https://gist.github.com/DanielHauge/fec1e3b381d2b77a44070080a14a5b45)
+
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
 Depth 1 | 655ms | 656ms | 7.8ms | 4.8ms
