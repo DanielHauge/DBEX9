@@ -179,7 +179,7 @@ Birthday | 53ms | 53ms | 313ms | 298ms
 Endorsing count | 9s | 9s | 15.3s | 15.8s 
 Endorsment count | 11.7s | 12.2s | 16s | 16s
 
-as can be seen, neo4j is very fast the second time around. Allthough it is not clearly the reason. It might also be because of the go driver, that the there is some inconsistencies. Next and final experiments will include indexing of properties, to see if neo4j might be just as fast as sql in finding data by flat values when indexed.
+as can be seen, neo4j is very fast the second time around. Allthough it is not clearly the reason. It might also be because of the go driver, that the there is some inconsistencies. Next and final experiments will include indexing of properties, to see if neo4j might be just as fast as sql in finding data by flat values when indexed. Results of these can be seen in the top.
 
 
 
