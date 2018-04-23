@@ -73,7 +73,7 @@ Relevant specs:
  - RAM: 8 GB
  - OS: Windows 10 Home edition (With all available updates)
  
-Virtual machine: [vagrantfile](#vagrantfile) 
+Virtual machine: [vagrantfile](#DBEX9/vagrantfile) 
 
 ##### Reproductions instructions.
 (How to simulate the same results)
