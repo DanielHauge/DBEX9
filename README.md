@@ -101,7 +101,7 @@ I ran the first experiments. Not all experiments completed because neo4j chrashe
 See [IntitialTest output gist](https://gist.github.com/DanielHauge/6d8d007ecfe3d76e26898126225589ab)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
------:|:-------:|:---------|:-------:|:---------
+-----:|:-------:|:---------:|:-------:|:---------
 Depth 1 | 777ms | 772ms | 125ms | 24ms |
 Depth 2 | 1.8s | 1.8s | 261ms | 156ms|
 Depth 3 | 3s | 3s | 518ms | 210ms |
@@ -123,7 +123,7 @@ From previusly, it looks like it is true that neo4j uses lots and lots of ram.
 See [Secondtest output gist](https://gist.github.com/DanielHauge/f7ad843a53fce4f0e5126cc8db77d521)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
------:|:-------:|:---------|:-------:|:---------
+-----:|:-------:|:---------:|:-------:|:---------
 Depth 1 | 2.2s | 2.2s | 64ms | 14ms
 Depth 2 | 3s | 2.5s | 101ms | 54ms 
 Depth 3 | 4.5s | 4.2s | 288ms | 223ms 
@@ -143,7 +143,7 @@ See [SQL-Only gist](https://gist.github.com/DanielHauge/16edb5a3175e49c3eb50e47f
 See [Neo4j-Only gist](https://gist.github.com/DanielHauge/0a368b303760ac2fdfda9fd28f244354)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
------:|:-------:|:---------|:-------:|:---------
+-----:|:-------:|:---------:|:-------:|:---------
 Depth 1 | 651ms | 650ms | 9.2ms | 6.5ms
 Depth 2 | 1.5s | 1.5s | 2.6s | 1.3s
 Depth 3 | 2.5s | 2.5s | 6.7s | 447ms
@@ -164,16 +164,16 @@ See [Neo4j-Only2 gist]()
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
-Depth 1 | 
-Depth 2 | 
-Depth 3 | 
-Depth 4 | 
-Depth 5 | 
-Job | 
-Name | 
-Birthday | 
-Endorsing count | 
-Endorsment count |
+Depth 1 | 668ms | 649ms | 8.8ms | 3.1ms 
+Depth 2 | 1.5s | 1.5s | 38ms | 10ms 
+Depth 3 | 2.5s | 2.5s | 207ms | 97ms 
+Depth 4 | 5.6s | 5.5s | 3.3s | 2.3s 
+Depth 5 | 10.5s | 10.3s | 39.8s | 27.1s
+Job | 48ms | 47ms | 357ms | 324ms 
+Name | 45ms | 44.9ms | 294ms | 250ms 
+Birthday | 53ms | 53ms | 313ms | 298ms 
+Endorsing count | 9s | 9s | 15.3s | 15.8s 
+Endorsment count | 11.7s | 12.2s | 16s | 16s
 
 as can be seen, neo4j is very fast the second time around. Allthough it is not clearly the reason. It might also be because of the go driver, that the there is some inconsistencies.
 
