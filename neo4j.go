@@ -11,7 +11,7 @@ import (
 var neo4j *sql.DB
 
 func SetupNeo4j(){
-	db, err := sql.Open("neo4j-cypher", "http://192.168.33.10:7474")
+	db, err := sql.Open("neo4j-cypher", "http://neo4j:7474")
 	if err != nil {
 		panic(err)
 	}
@@ -24,7 +24,7 @@ func SetupNeo4j(){
 
 func NeoEndorsing(count int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH ()-[r]->(n) WITH n, count(r) as rel_cnt WHERE rel_cnt = {0} return ID(n), n.name, n.job, n.birthday;`)
+	stmt, err := neo4j.Prepare(`MATCH ()-[r]->(n) WITH n, count(r) as rel_cnt WHERE rel_cnt = {0} return DISTINCT ID(n), n.name, n.job, n.birthday;`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -51,7 +51,7 @@ func NeoEndorsing(count int)[]person{
 
 func NeoEndorsment(count int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (n)-[r]->() WITH n, count(r) as rel_cnt WHERE rel_cnt = {0} return ID(n), n.name, n.job, n.birthday;`)
+	stmt, err := neo4j.Prepare(`MATCH (n)-[r]->() WITH n, count(r) as rel_cnt WHERE rel_cnt = {0} return DISTINCT ID(n), n.name, n.job, n.birthday;`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -78,7 +78,7 @@ func NeoEndorsment(count int)[]person{
 
 func NeoJob(jobin string)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.job={0} return ID(x), x.name, x.job, x.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.job={0} return DISTINCT ID(x), x.name, x.job, x.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -105,7 +105,7 @@ func NeoJob(jobin string)[]person{
 
 func NeoName(namein string)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.name={0} return ID(x), x.name, x.job, x.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.name={0} return DISTINCT ID(x), x.name, x.job, x.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -132,7 +132,7 @@ func NeoName(namein string)[]person{
 
 func NeoBirth(birth string)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.birthday={0} return ID(x), x.name, x.job, x.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person) WHERE x.birthday={0} return DISTINCT ID(x), x.name, x.job, x.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -160,7 +160,7 @@ func NeoBirth(birth string)[]person{
 
 func Neod1(id int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->(other) WHERE ID(x)= {0} return ID(other), other.name, other.job, other.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->(other) WHERE ID(x)= {0} return DISTINCT ID(other), other.name, other.job, other.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -187,7 +187,7 @@ func Neod1(id int)[]person{
 
 func Neod2(id int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return ID(other), other.name, other.job, other.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return DISTINCT ID(other), other.name, other.job, other.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -214,7 +214,7 @@ func Neod2(id int)[]person{
 
 func Neod3(id int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return ID(other), other.name, other.job, other.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return DISTINCT ID(other), other.name, other.job, other.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -241,7 +241,7 @@ func Neod3(id int)[]person{
 
 func Neod4(id int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return ID(other), other.name, other.job, other.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return DISTINCT ID(other), other.name, other.job, other.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -268,7 +268,7 @@ func Neod4(id int)[]person{
 
 func Neod5(id int)[]person{
 	result := []person{}
-	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return ID(other), other.name, other.job, other.birthday`)
+	stmt, err := neo4j.Prepare(`MATCH (x:Person)-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->()-[:ENDORSES]->(other) WHERE ID(x)= {0} return DISTINCT ID(other), other.name, other.job, other.birthday`)
 	if err != nil {
 		log.Fatal(err)
 	}

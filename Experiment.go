@@ -5,7 +5,7 @@ import "time"
 var start time.Time
 var t time.Time
 
-func TestStringQuery(input []string,f func(job string)([]person))[]time.Duration{
+func ExperimentStringQuery(input []string,f func(job string)([]person))[]time.Duration{
 	res := []time.Duration{}
 	for _, in := range input{
 		start = time.Now()
@@ -16,7 +16,7 @@ func TestStringQuery(input []string,f func(job string)([]person))[]time.Duration
 	return res
 }
 
-func TestIntQuery(id []int, f func(i int)([]person))[]time.Duration{
+func ExperimentIntQuery(id []int, f func(i int)([]person))[]time.Duration{
 	res := []time.Duration{}
 	for _, in := range id{
 		start = time.Now()

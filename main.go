@@ -20,96 +20,108 @@ var EndorsmentCount []int
 
 func main(){
 
-	SQLSetup("user=postgres dbname=postgres host=192.168.33.10 sslmode=disable")
-	SetupNeo4j()
+	SQLSetup("user=postgres dbname=postgres host=psql sslmode=disable")
+	//SetupNeo4j()
 	SetupTestVariables()
 	PrintTestVariables()
 	var dur []time.Duration
 
 
+	fmt.Println()
+	fmt.Println(" ###################################")
+	fmt.Println(" ######## SQL Experiments ##########")
+	fmt.Println(" ###################################")
+	fmt.Println()
+
 	fmt.Println("SQL - Experiement: All person that a person endorses (Depth one)")
-	dur = TestIntQuery(TestPeople, sqld1)
+	dur = ExperimentIntQuery(TestPeople, sqld1)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: Endorsements of depth two.")
-	dur = TestIntQuery(TestPeople, sqld2)
+	dur = ExperimentIntQuery(TestPeople, sqld2)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: Endorsements of depth three.")
-	dur = TestIntQuery(TestPeople, sqld3)
+	dur = ExperimentIntQuery(TestPeople, sqld3)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: Endorsements of depth four.")
-	dur = TestIntQuery(TestPeople, sqld4)
+	dur = ExperimentIntQuery(TestPeople, sqld4)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: Endorsements of depth five.")
-	dur = TestIntQuery(TestPeople, sqld5)
+	dur = ExperimentIntQuery(TestPeople, sqld5)
 	PrintStats(dur)
 
 
 	fmt.Println("SQL - Experiement: All persons that has a specific job")
-	dur = TestStringQuery(TestJobs, sqljob)
+	dur = ExperimentStringQuery(TestJobs, sqljob)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: All persons that has a speicifc name")
-	dur = TestStringQuery(TestNames, sqlname)
+	dur = ExperimentStringQuery(TestNames, sqlname)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement:  All persons that has a specific birthday.")
-	dur = TestStringQuery(TestBirthdays, sqlbirth)
+	dur = ExperimentStringQuery(TestBirthdays, sqlbirth)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement: All persons that has a specific ammount of people they endorse.")
-	dur = TestIntQuery(EndorsmentCount, sqlendorsing)
+	dur = ExperimentIntQuery(EndorsmentCount, sqlendorsing)
 	PrintStats(dur)
 
 	fmt.Println("SQL - Experiement:  All persons that has a specific amount of endorsments..")
-	dur = TestIntQuery(EndorsmentCount, sqlEndorsment)
+	dur = ExperimentIntQuery(EndorsmentCount, sqlEndorsment)
 	PrintStats(dur)
 
 	////////////////// NEO4J
+	fmt.Println()
+	fmt.Println(" ###################################")
+	fmt.Println(" ######## NEO4J Experiments ########")
+	fmt.Println(" ###################################")
+	fmt.Println()
 
 	fmt.Println("Neo4j - Experiement: All person that a person endorses (Depth one)")
-	dur = TestIntQuery(TestPeople, Neod1)
+	dur = ExperimentIntQuery(TestPeople, Neod1)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: Endorsements of depth two.")
-	dur = TestIntQuery(TestPeople, Neod2)
+	dur = ExperimentIntQuery(TestPeople, Neod2)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: Endorsements of depth three.")
-	dur = TestIntQuery(TestPeople, Neod3)
+	dur = ExperimentIntQuery(TestPeople, Neod3)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: Endorsements of depth four.")
-	dur = TestIntQuery(TestPeople, Neod4)
+	dur = ExperimentIntQuery(TestPeople, Neod4)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: Endorsements of depth five.")
-	dur = TestIntQuery(TestPeople, Neod5)
+	dur = ExperimentIntQuery(TestPeople, Neod5)
 	PrintStats(dur)
 
 
 	fmt.Println("Neo4j - Experiement: All persons that has a specific job")
-	dur = TestStringQuery(TestJobs, NeoJob)
+	dur = ExperimentStringQuery(TestJobs, NeoJob)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: All persons that has a speicifc name")
-	dur = TestStringQuery(TestNames, NeoName)
+	dur = ExperimentStringQuery(TestNames, NeoName)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement:  All persons that has a specific birthday.")
-	dur = TestStringQuery(TestBirthdays, NeoBirth)
+	dur = ExperimentStringQuery(TestBirthdays, NeoBirth)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement: All persons that has a specific ammount of people they endorse.")
-	dur = TestIntQuery(EndorsmentCount, NeoEndorsing)
+	dur = ExperimentIntQuery(EndorsmentCount, NeoEndorsing)
 	PrintStats(dur)
 
 	fmt.Println("Neo4j - Experiement:  All persons that has a specific amount of endorsments..")
-	dur = TestIntQuery(EndorsmentCount, NeoEndorsment)
+	dur = ExperimentIntQuery(EndorsmentCount, NeoEndorsment)
 	PrintStats(dur)
+	
 
 
 }

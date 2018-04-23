@@ -2,20 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cf0b778c-d5fe-4d39-bedc-394fb1656c5d" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/Dockerfile" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/StartExperiment.sh" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/action_provision" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/action_set_name" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/creator_uid" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/id" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/index_uuid" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/private_key" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/synced_folders" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/vagrant_cwd" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change beforePath="$PROJECT_DIR$/Experiment.go" afterPath="$PROJECT_DIR$/Experiment.go" />
       <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
       <change beforePath="$PROJECT_DIR$/neo4j.go" afterPath="$PROJECT_DIR$/neo4j.go" />
-      <change beforePath="$PROJECT_DIR$/queries.go" afterPath="$PROJECT_DIR$/Experiment.go" />
-      <change beforePath="$PROJECT_DIR$/sql.go" afterPath="$PROJECT_DIR$/sql.go" />
+      <change beforePath="$PROJECT_DIR$/vagrantfile" afterPath="$PROJECT_DIR$/vagrantfile" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-986">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="320">
+              <caret line="123" column="4" lean-forward="true" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
               <folding>
                 <element signature="e#14#60#0" expanded="true" />
               </folding>
@@ -38,11 +31,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartExperiment.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StartExperiment.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Experiment.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Experiment.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="68">
+              <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
               <folding>
                 <element signature="e#14#27#0" expanded="true" />
               </folding>
@@ -53,15 +66,12 @@
       <file leaf-file-name="sql.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+            <state relative-caret-position="2258">
+              <caret line="166" column="20" lean-forward="true" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
               <folding>
                 <element signature="e#14#77#0" expanded="true" />
                 <element signature="n#!!block;n#sqljob#0" expanded="false" />
                 <element signature="n#!!block;n#sqlname#0" expanded="false" />
-                <element signature="n#!!block;n#sqld1#0" expanded="false" />
-                <element signature="n#!!block;n#sqld2#0" expanded="false" />
-                <element signature="n#!!block;n#sqld3#0" expanded="false" />
                 <element signature="n#!!block;n#sqld4#0" expanded="false" />
                 <element signature="n#!!block;n#sqld5#0" expanded="false" />
                 <marker date="1524439913116" expanded="true" signature="425:462" ph="SELECT * FRO... vertex" />
@@ -72,11 +82,6 @@
                 <marker date="1524439913116" expanded="true" signature="2353:2489" ph="SELECT * FRO... vertex" />
                 <marker date="1524439913116" expanded="true" signature="2387:2488" ph="SELECT dest dest" />
                 <marker date="1524439913116" expanded="true" signature="2405:2465" ph="SELECT dest,... " />
-                <marker date="1524439913116" expanded="true" signature="4133:4331" ph="SELECT * FRO... vertex" />
-                <marker date="1524439913116" expanded="true" signature="4167:4330" ph="SELECT dest edges" />
-                <marker date="1524439913116" expanded="true" signature="4207:4329" ph="SELECT dest edges" />
-                <marker date="1524439913116" expanded="true" signature="4247:4328" ph="SELECT dest edges" />
-                <marker date="1524439913116" expanded="true" signature="4287:4327" ph="SELECT dest edges" />
               </folding>
             </state>
           </provider>
@@ -86,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/vagrantfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+              <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -96,8 +101,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="332">
-                <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <first_editor relative-caret-position="234">
+                <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -105,19 +110,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="neo4j.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="neo4j.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/neo4j.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
-                <element signature="e#14#75#0" expanded="true" />
                 <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
                 <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
                 <element signature="n#!!block;n#NeoJob#0" expanded="false" />
                 <element signature="n#!!block;n#NeoName#0" expanded="false" />
                 <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
-                <element signature="n#!!block;n#Neod1#0" expanded="false" />
                 <element signature="n#!!block;n#Neod2#0" expanded="false" />
                 <element signature="n#!!block;n#Neod3#0" expanded="false" />
                 <element signature="n#!!block;n#Neod4#0" expanded="false" />
@@ -146,11 +149,13 @@
       <list>
         <option value="$PROJECT_DIR$/queries.go" />
         <option value="$PROJECT_DIR$/QueryTest.go" />
-        <option value="$PROJECT_DIR$/Experiment.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/sql.go" />
+        <option value="$PROJECT_DIR$/Experiment.go" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/StartExperiment.sh" />
         <option value="$PROJECT_DIR$/neo4j.go" />
+        <option value="$PROJECT_DIR$/main.go" />
       </list>
     </option>
   </component>
@@ -161,8 +166,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="558" />
-    <option name="y" value="-21" />
+    <option name="x" value="230" />
+    <option name="y" value="-10" />
     <option name="width" value="1538" />
     <option name="height" value="1032" />
   </component>
@@ -181,6 +186,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,7 +199,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,7 +218,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="go build main.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="DBEX9" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -238,10 +243,21 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <list size="3">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+          <option name="startBrowserSettings">
+            <browser url="http://127.0.0.1" />
+          </option>
+        </settings>
+      </deployment>
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Go Build.go build main.go" />
       <item index="1" class="java.lang.String" itemvalue="Go Build.go build main.go (1)" />
       <item index="2" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
+      <item index="3" class="java.lang.String" itemvalue="Docker.Dockerfile" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -258,7 +274,7 @@
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11128776" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11208267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -285,10 +301,91 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2618">
+          <caret line="159" column="0" lean-forward="false" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
+          <folding>
+            <element signature="e#14#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding>
+            <element signature="e#14#77#0" expanded="true" />
+            <element signature="n#!!block;n#sqljob#0" expanded="false" />
+            <element signature="n#!!block;n#sqlname#0" expanded="false" />
+            <element signature="n#!!block;n#sqld4#0" expanded="false" />
+            <element signature="n#!!block;n#sqld5#0" expanded="false" />
+            <marker date="1524439913116" expanded="true" signature="425:462" ph="SELECT * FRO... vertex" />
+            <marker date="1524439913116" expanded="true" signature="1149:1189" ph="SELECT * FRO... vertex" />
+            <marker date="1524439913116" expanded="true" signature="1884:2024" ph="SELECT * FRO... vertex" />
+            <marker date="1524439913116" expanded="true" signature="1918:2023" ph="SELECT sourc... source" />
+            <marker date="1524439913116" expanded="true" signature="1938:2000" ph="SELECT sourc... " />
+            <marker date="1524439913116" expanded="true" signature="2353:2489" ph="SELECT * FRO... vertex" />
+            <marker date="1524439913116" expanded="true" signature="2387:2488" ph="SELECT dest dest" />
+            <marker date="1524439913116" expanded="true" signature="2405:2465" ph="SELECT dest,... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vagrantfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neo4j.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="36" lean-forward="false" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
+            <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
+            <element signature="n#!!block;n#NeoJob#0" expanded="false" />
+            <element signature="n#!!block;n#NeoName#0" expanded="false" />
+            <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
+            <element signature="n#!!block;n#Neod2#0" expanded="false" />
+            <element signature="n#!!block;n#Neod3#0" expanded="false" />
+            <element signature="n#!!block;n#Neod4#0" expanded="false" />
+            <element signature="n#!!block;n#Neod5#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="952">
+            <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Experiment.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding>
+            <element signature="e#14#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -317,9 +414,6 @@
             <element signature="e#14#77#0" expanded="true" />
             <element signature="n#!!block;n#sqljob#0" expanded="false" />
             <element signature="n#!!block;n#sqlname#0" expanded="false" />
-            <element signature="n#!!block;n#sqld1#0" expanded="false" />
-            <element signature="n#!!block;n#sqld2#0" expanded="false" />
-            <element signature="n#!!block;n#sqld3#0" expanded="false" />
             <element signature="n#!!block;n#sqld4#0" expanded="false" />
             <element signature="n#!!block;n#sqld5#0" expanded="false" />
             <marker date="1524439913116" expanded="true" signature="425:462" ph="SELECT * FRO... vertex" />
@@ -330,11 +424,6 @@
             <marker date="1524439913116" expanded="true" signature="2353:2489" ph="SELECT * FRO... vertex" />
             <marker date="1524439913116" expanded="true" signature="2387:2488" ph="SELECT dest dest" />
             <marker date="1524439913116" expanded="true" signature="2405:2465" ph="SELECT dest,... " />
-            <marker date="1524439913116" expanded="true" signature="4133:4331" ph="SELECT * FRO... vertex" />
-            <marker date="1524439913116" expanded="true" signature="4167:4330" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4207:4329" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4247:4328" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4287:4327" ph="SELECT dest edges" />
           </folding>
         </state>
       </provider>
@@ -352,13 +441,11 @@
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
-            <element signature="e#14#75#0" expanded="true" />
             <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
             <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
             <element signature="n#!!block;n#NeoJob#0" expanded="false" />
             <element signature="n#!!block;n#NeoName#0" expanded="false" />
             <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
-            <element signature="n#!!block;n#Neod1#0" expanded="false" />
             <element signature="n#!!block;n#Neod2#0" expanded="false" />
             <element signature="n#!!block;n#Neod3#0" expanded="false" />
             <element signature="n#!!block;n#Neod4#0" expanded="false" />
@@ -413,13 +500,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding>
-            <element signature="e#14#75#0" expanded="true" />
             <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
             <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
             <element signature="n#!!block;n#NeoJob#0" expanded="false" />
             <element signature="n#!!block;n#NeoName#0" expanded="false" />
             <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
-            <element signature="n#!!block;n#Neod1#0" expanded="false" />
             <element signature="n#!!block;n#Neod2#0" expanded="false" />
             <element signature="n#!!block;n#Neod3#0" expanded="false" />
             <element signature="n#!!block;n#Neod4#0" expanded="false" />
@@ -436,9 +521,6 @@
             <element signature="e#14#77#0" expanded="true" />
             <element signature="n#!!block;n#sqljob#0" expanded="false" />
             <element signature="n#!!block;n#sqlname#0" expanded="false" />
-            <element signature="n#!!block;n#sqld1#0" expanded="false" />
-            <element signature="n#!!block;n#sqld2#0" expanded="false" />
-            <element signature="n#!!block;n#sqld3#0" expanded="false" />
             <element signature="n#!!block;n#sqld4#0" expanded="false" />
             <element signature="n#!!block;n#sqld5#0" expanded="false" />
             <marker date="1524439913116" expanded="true" signature="425:462" ph="SELECT * FRO... vertex" />
@@ -449,11 +531,6 @@
             <marker date="1524439913116" expanded="true" signature="2353:2489" ph="SELECT * FRO... vertex" />
             <marker date="1524439913116" expanded="true" signature="2387:2488" ph="SELECT dest dest" />
             <marker date="1524439913116" expanded="true" signature="2405:2465" ph="SELECT dest,... " />
-            <marker date="1524439913116" expanded="true" signature="4133:4331" ph="SELECT * FRO... vertex" />
-            <marker date="1524439913116" expanded="true" signature="4167:4330" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4207:4329" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4247:4328" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4287:4327" ph="SELECT dest edges" />
           </folding>
         </state>
       </provider>
@@ -461,27 +538,17 @@
     <entry file="file://$PROJECT_DIR$/vagrantfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <caret line="23" column="2" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="23" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/QueryTest.go" />
-    <entry file="file://$PROJECT_DIR$/Experiment.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="332">
-            <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+          <first_editor relative-caret-position="234">
+            <caret line="56" column="5" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
             <folding />
           </first_editor>
           <second_editor />
@@ -494,27 +561,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
+    <entry file="file://$PROJECT_DIR$/Experiment.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-986">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="68">
+          <caret line="4" column="19" lean-forward="true" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
-            <element signature="e#14#60#0" expanded="true" />
+            <element signature="e#14#27#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/neo4j.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
+            <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
+            <element signature="n#!!block;n#NeoJob#0" expanded="false" />
+            <element signature="n#!!block;n#NeoName#0" expanded="false" />
+            <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
+            <element signature="n#!!block;n#Neod2#0" expanded="false" />
+            <element signature="n#!!block;n#Neod3#0" expanded="false" />
+            <element signature="n#!!block;n#Neod4#0" expanded="false" />
+            <element signature="n#!!block;n#Neod5#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/StartExperiment.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sql.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="105" column="5" lean-forward="true" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+        <state relative-caret-position="2258">
+          <caret line="166" column="20" lean-forward="true" selection-start-line="166" selection-start-column="20" selection-end-line="166" selection-end-column="20" />
           <folding>
             <element signature="e#14#77#0" expanded="true" />
             <element signature="n#!!block;n#sqljob#0" expanded="false" />
             <element signature="n#!!block;n#sqlname#0" expanded="false" />
-            <element signature="n#!!block;n#sqld1#0" expanded="false" />
-            <element signature="n#!!block;n#sqld2#0" expanded="false" />
-            <element signature="n#!!block;n#sqld3#0" expanded="false" />
             <element signature="n#!!block;n#sqld4#0" expanded="false" />
             <element signature="n#!!block;n#sqld5#0" expanded="false" />
             <marker date="1524439913116" expanded="true" signature="425:462" ph="SELECT * FRO... vertex" />
@@ -525,31 +623,16 @@
             <marker date="1524439913116" expanded="true" signature="2353:2489" ph="SELECT * FRO... vertex" />
             <marker date="1524439913116" expanded="true" signature="2387:2488" ph="SELECT dest dest" />
             <marker date="1524439913116" expanded="true" signature="2405:2465" ph="SELECT dest,... " />
-            <marker date="1524439913116" expanded="true" signature="4133:4331" ph="SELECT * FRO... vertex" />
-            <marker date="1524439913116" expanded="true" signature="4167:4330" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4207:4329" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4247:4328" ph="SELECT dest edges" />
-            <marker date="1524439913116" expanded="true" signature="4287:4327" ph="SELECT dest edges" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/neo4j.go">
+    <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="294" column="0" lean-forward="true" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+        <state relative-caret-position="320">
+          <caret line="123" column="4" lean-forward="true" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
           <folding>
-            <element signature="e#14#75#0" expanded="true" />
-            <element signature="n#!!block;n#NeoEndorsing#0" expanded="false" />
-            <element signature="n#!!block;n#NeoEndorsment#0" expanded="false" />
-            <element signature="n#!!block;n#NeoJob#0" expanded="false" />
-            <element signature="n#!!block;n#NeoName#0" expanded="false" />
-            <element signature="n#!!block;n#NeoBirth#0" expanded="false" />
-            <element signature="n#!!block;n#Neod1#0" expanded="false" />
-            <element signature="n#!!block;n#Neod2#0" expanded="false" />
-            <element signature="n#!!block;n#Neod3#0" expanded="false" />
-            <element signature="n#!!block;n#Neod4#0" expanded="false" />
-            <element signature="n#!!block;n#Neod5#0" expanded="false" />
+            <element signature="e#14#60#0" expanded="true" />
           </folding>
         </state>
       </provider>
