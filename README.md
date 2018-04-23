@@ -50,6 +50,8 @@ as the hypothesis states, graphbased databases are clearly faster at searching d
 
 These experiments are influenced by the choice of language. The given language go is a young language and hence does not have an official neo4j driver, this will affect the results. Further investigation across different languages can be done, to better answer the question at hand. However these results does still indicate largely that graphbased databases is a good choice when it comes to searching for data by nested relationships. Where as SQL based databases is a good choice when it comes to searching for data by flat values. 
 
+It has to be said, even though you might say graph based databases are a good choice under some circumstances. It will also come at some costs. Mainly ram usage, and usage before speed increases. The experiments has indicated that neo4j is speeding up for each query being run, as if caching procedures or sub-results. This can easily be spotted aswell by the big inconsistency between Median and Average. This can also be the result of third party driver for go, more experiments is needed to be able to say for sure.
+
 ### Experiment Execution
 
 ##### Specs
