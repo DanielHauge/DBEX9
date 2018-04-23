@@ -30,25 +30,27 @@ The experiment will be as follows: From a pre-existing dataset, which consists o
 Both database queries will use the same parameters. ie. The same persons, job, name to search for et cetera.
 
 ### Results
+Note: This is after indexing. See [Executions](#Executions)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
-Depth 1 | 
-Depth 2 | 
-Depth 3 | 
-Depth 4 | 
-Depth 5 | 
-Job | 
-Name | 
-Birthday | 
-Endorsing count | 
-Endorsment count |
+Depth 1 | 655ms | 656ms | 7.8ms | 4.8ms
+Depth 2 | 1.5s | 1.5s | 14.5ms | 9ms 
+Depth 3 | 2.5s | 2.5s | 185.4ms | 139.6ms 
+Depth 4 | 5.6s | 5.4s | 3.6s | 2.8s 
+Depth 5 | 10s | 10s | 45.4s | 30s 
+Job | 637 µs | 495 µs | 108ms | 15ms
+Name | 253 µs | 190 µs | 19.6ms | 12.2ms
+Birthday | 407 µs | 391 µs | 23ms | 7.6ms
+Endorsing count | 9.2s | 9.4s | 17.9s | 19.9s
+Endorsment count | 11.6s | 12s | 19.2s | 19.7s
 
 ### Conclusion
+as the hypothesis states, graphbased databases are clearly faster at searching data from relationships than sql is. Allthough the results seem to favor sql when it comes to deeper levels of relationships, it is thought to be that neo4j just runs out of ram or something along those lines. However taking all the experiements into consideration, it is clear to say that graphbased databases is faster at searching for data by relationships. In addition SQL is faster at searching for data by flat values on properties, with or without indexes. Allthough Neo4j becomes fast to a degree where you would say it's fine or adequate. But the fast SQL might be neccesary in very time sensitive applications.
 
-### Execution
-#### Enviroment
-Vagrant VM and docker
+These experiments are influenced by the choice of language. The given language go is a young language and hence does not have an official neo4j driver, this will affect the results. Further investigation across different languages can be done, to better answer the question at hand. However these results does still indicate largely that graphbased databases is a good choice when it comes to searching for data by nested relationships. Where as SQL based databases is a good choice when it comes to searching for data by flat values. 
+
+### Experiment Execution
 
 ##### Specs
 Localmachine has the following specs:
@@ -59,7 +61,7 @@ Relevant specs:
 Virtual machine: [vagrantfile](https://github.com/DanielHauge/DBEX9/blob/master/vagrantfile) 
 
 ##### Reproductions instructions.
-To setup the same experiments. Do the following: (It is assumed linux is used)
+To setup the same experiments. Do the following: (It is assumed linux is used) Vagrantfile can be used to create virtual machine. (ubuntu 16 distribution)
 
 - Step 1. Install docker
 ```
@@ -91,7 +93,7 @@ docker run -it --link neo4j danielhauge/dbex9:neo4j
 ```
 
 #### Executions
-To experiment, i've developed a simple benchmarking program in golang. With functions to integrate with both neo4j and sql with similar inputs and outputs. Note, that results will also affect which given language is used. It should be noted that Neo4j does not have a official driver for golang, therefor the results does not apply 100% to all circumstances in integration of every language.
+To experiment, i've developed a simple benchmarking program in golang. With functions to integrate with both neo4j and sql with similar inputs and outputs. Note, that results will also affect which given language is used. It should be noted that Neo4j does not have a official driver for golang, therefor the results does not apply 100% to all circumstances in integration of every language. The code for the golang application can be found in this repository.
 
 ##### 1: Initial Experiments
 note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine, both databases is running in different docker containers on the same virtual machine.
@@ -159,8 +161,8 @@ These results is representing a better picture i think. Allthough the results ar
 
 #### 4. Without restarting neo4j
 
-See [SQL-Only2 gist]()
-See [Neo4j-Only2 gist]()
+See [SQL-Only2 gist](https://gist.github.com/DanielHauge/65df066d05ded8c90070e0ffb063ce14)
+See [Neo4j-Only2 gist](https://gist.github.com/DanielHauge/3bd63ee460ec291ab9eea40fe9b5519a)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
