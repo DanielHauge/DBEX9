@@ -114,21 +114,22 @@ Endorsment count | 13.5s | 13.5s | N/A | N/A
 Disregarding missing data. We can stil see very promising results when it comes to finding nested relations. As hypothesized, the sql database seems slower when it comes to finding the relations by relationships. Neo4j is many times faster for 1,2 and 3 depth, but is starting to halt on the 4th, and crashed on the 5h level. I suspect that the level 4 query on neo4j is alot faster, but because of ram and memory shortage it is starting to halt, but also because it wasn't distincting persons.
 
 #### 2: Neo4j query upgade + Ram upgrade
+I shifted to a stronger machine with more ram. Since my computer only has 8gb ram. This also means the processor will get slower, so the numbers might look different. but the propotions should stay intact.
 
-See [Secondtest output gist]()
+See [Secondtest output gist](https://gist.github.com/DanielHauge/f7ad843a53fce4f0e5126cc8db77d521)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
 -----:|:-------:|:---------|:-------:|:---------
-Depth 1 | 
-Depth 2 | 
-Depth 3 | 
-Depth 4 | 
-Depth 5 | 
-Job | 
-Name | 
-Birthday | 
-Endorsing count | 
-Endorsment count |
+Depth 1 | 2.2s | 2.2s | 64ms | 14ms
+Depth 2 | 3s | 2.5s | 101ms | 54ms 
+Depth 3 | 4.5s | 4.2s | 288ms | 223ms 
+Depth 4 | 14.8s | 15.4s | 7.1s | 5.7s 
+Depth 5 | 14.8s | 11.6s | 45.2s | 35.5s 
+Job | 46ms | 46ms | 738ms | 475ms
+Name | 44ms | 44ms | 415ms | 380ms
+Birthday | 52ms | 52ms | 456ms | 442ms
+Endorsing count | 9s | 9s | 18s | 18s
+Endorsment count | 11.6s | 12.1s | 20s | 20.6s
 
 
 
