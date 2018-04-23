@@ -39,7 +39,6 @@ func sqlid(ids []int)[]person{
 }
 
 func sqljob(job string)[]person{
-	fmt.Println("sql job")
 	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE job = $1;`,  job)
 	if err != nil{
 		log.Fatal(err)
@@ -56,8 +55,24 @@ func sqljob(job string)[]person{
 	return results
 }
 
+func sqlbirth(birth string)[]person{
+	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE birthday = $1;`,  birth)
+	if err != nil{
+		log.Fatal(err)
+	}
+	results := []person{}
+	temp := person{}
+	for rows.Next(){
+		err = rows.Scan(&temp.id, &temp.name, &temp.job, &temp.birthday)
+		results = append(results, temp)
+	}
+	if err != nil{
+		log.Fatal(err)
+	}
+	return results
+}
+
 func sqlname(name string)[]person{
-	fmt.Println("sql job")
 	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE name = $1;`,  name)
 	if err != nil{
 		log.Fatal(err)
@@ -76,7 +91,7 @@ func sqlname(name string)[]person{
 }
 
 func sqlendorsing(count int)[]person{
-	rows, err := sqldb.Query(`SELECT * FROM (SELECT source, COUNT(dest) as count FROM edges GROUP BY source) as q WHERE count = $1;`,  count)
+	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE id IN (SELECT source FROM (SELECT source, COUNT(dest) as count FROM edges GROUP BY source) as q WHERE count = $1);`,  count)
 	if err != nil{
 		log.Fatal(err)
 	}
@@ -93,26 +108,41 @@ func sqlendorsing(count int)[]person{
 }
 
 func sqlEndorsment(id int)[]person{
-	fmt.Println("sql job")
-	rows, err := sqldb.Query(`SELECT source FROM edges WHERE dest = $1;`,  id)
+	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE id IN (SELECT dest FROM (SELECT dest, COUNT(source) as count FROM edges GROUP BY dest) as q WHERE count = $1);`,  id)
 	if err != nil{
 		log.Fatal(err)
 	}
-	dests := []int{}
-	temp := 0
+	results := []person{}
+	temp := person{}
 	for rows.Next(){
-		err = rows.Scan(&temp)
-		dests = append(dests, temp)
+		err = rows.Scan(&temp.id, &temp.name, &temp.job, &temp.birthday)
+		results = append(results, temp)
 	}
 	if err != nil{
 		log.Fatal(err)
 	}
-
-	return sqlid(dests)
+	return results
 }
 
-func sqld2(count int)[]person{
-	rows, err := sqldb.Query(`SELECT * FROM (SELECT dest, COUNT(source) as count FROM edges GROUP BY dest) as q WHERE count = $1;`,  count)
+func sqld1(id int)[]person{
+	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE id IN (SELECT dest FROM edges WHERE source = $1);`,  id)
+	if err != nil{
+		log.Fatal(err)
+	}
+	results := []person{}
+	temp := person{}
+	for rows.Next(){
+		err = rows.Scan(&temp.id, &temp.name, &temp.job, &temp.birthday)
+		results = append(results, temp)
+	}
+	if err != nil{
+		log.Fatal(err)
+	}
+	return results
+}
+
+func sqld2(id int)[]person{
+	rows, err := sqldb.Query(`SELECT * FROM vertex WHERE id IN (SELECT dest FROM edges WHERE source IN (SELECT dest FROM edges WHERE source = $1));`,  id)
 	if err != nil{
 		log.Fatal(err)
 	}

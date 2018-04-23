@@ -22,7 +22,8 @@ The experiment will be as follows: From a pre-existing dataset, which consists o
 - Endorsements of depth four.
 - Endorsements of depth five.
 - All persons that has a specific job
-- All persons that has a speicifc name
+- All persons that has a specific name
+- All persons that has a specific birthday.
 - All persons that has a specific ammount of people they endorse.
 - All persons that has a specific amount of endorsments.
 
@@ -39,7 +40,6 @@ Depth 2 |
 Depth 3 |
 Depth 4 |
 Depth 5 |
-Id |
 Job |
 Name |
 Birthday |
@@ -54,7 +54,6 @@ Depth 2 |
 Depth 3 |
 Depth 4 |
 Depth 5 |
-Id |
 Job |
 Name |
 Birthday |
