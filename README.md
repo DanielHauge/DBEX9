@@ -54,9 +54,8 @@ Vagrant VM and docker
 ##### Specs
 Localmachine has the following specs:
 Relevant specs: 
- - Processor: Intel(R) Core(TM) i5-3570k CPU @ 3.40GHz 3.4 GHz
- - RAM: 8 GB
- - OS: Windows 10 Home edition (With all available updates)
+ - Processor: Intel(R) Core(TM) i7-4720HQ CPU @ 2.60GHz 2.60 GHz
+ - RAM: 16 GB
  
 Virtual machine: [vagrantfile](https://github.com/DanielHauge/DBEX9/blob/master/vagrantfile) 
 
@@ -79,13 +78,17 @@ wget -O - https://raw.githubusercontent.com/DanielHauge/DBEX9/master/RunNeo4JWit
 ```
 ./importGraph.sh
 ```
-- Step 5a. Run the benchmarking application
+- Step 5. Run the benchmarking application
 ```
 sudo docker run -it --link psql --link neo4j danielhauge/dbex9
 ```
-- Step 5b. Run the benchmarking application detached to file (Let it run until container has exit)
+---------------
+To setup, experiments where both databases are not running database container can be stopped and removed and this image tag of the program container can be run
 ```
-sudo docker run -dit --link psql --link neo4j danielhauge/dbex9 >> outputfile
+docker run -it --link psql danielhauge/dbex9:sql
+```
+```
+docker run -it --link neo4j danielhauge/dbex9:neo4j
 ```
 
 #### Executions
@@ -153,7 +156,27 @@ Birthday | 52ms | 52ms | 320ms | 297ms
 Endorsing count | 9.3s | 9.3s | 16s | 16s
 Endorsment count | 11.8s | 12.2s | 17s | 17s
 
+These results is representing a better picture i think. Allthough the results are still very inconsistent. As seen in individual query runtimes, Neo4j depth 2 has alot of very fast queries where as it has a single outlier with 26 seconds instead of 50 ms. It is theorized that neo4j or it's go driver needs to warm up or has some delay sometimes. The usual results is as: average is alot higher than median, which means it has outliers. Usualy in the start.
 
+#### 4. Without restarting neo4j
+
+See [SQL-Only2 gist]()
+See [Neo4j-Only2 gist]()
+
+Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
+-----:|:-------:|:---------|:-------:|:---------
+Depth 1 | 
+Depth 2 | 
+Depth 3 | 
+Depth 4 | 
+Depth 5 | 
+Job | 
+Name | 
+Birthday | 
+Endorsing count | 
+Endorsment count |
+
+as can be seen, neo4j is very fast the second time around. Allthough it is not clearly the reason. It might also be because of the go driver, that the there is some inconsistencies.
 
 
 
