@@ -116,6 +116,8 @@ Disregarding missing data. We can stil see very promising results when it comes 
 #### 2: Neo4j query upgade + Ram upgrade
 I shifted to a stronger machine with more ram. Since my computer only has 8gb ram. This also means the processor will get slower, so the numbers might look different. but the propotions should stay intact.
 
+From previusly, it looks like it is true that neo4j uses lots and lots of ram.
+
 See [Secondtest output gist](https://gist.github.com/DanielHauge/f7ad843a53fce4f0e5126cc8db77d521)
 
 Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
@@ -131,7 +133,25 @@ Birthday | 52ms | 52ms | 456ms | 442ms
 Endorsing count | 9s | 9s | 18s | 18s
 Endorsment count | 11.6s | 12.1s | 20s | 20.6s
 
+These results is a little weird in my opinion. The change is that i shifted to a computer with more ram, and gave the virtualmachine more ram, and also ran the go program in a docker container. The weird thing here is, neo4j got faster except level 4 but sql got slower. It is theorized that neo4j is using lots and lots of ram, and got faster by hogging all the ram. To best simulate a real integration and get better results, another experiment could be where only 1 database is on at a time.
 
+#### 3. Only 1 DBMS at a time.
+
+See [SQL-Only gist](https://gist.github.com/DanielHauge/16edb5a3175e49c3eb50e47fa39fb93b)
+See [Neo4j-Only gist](https://gist.github.com/DanielHauge/0a368b303760ac2fdfda9fd28f244354)
+
+Query | Average SQL | Median SQL | Average Neo4j | Median Neo4j
+-----:|:-------:|:---------|:-------:|:---------
+Depth 1 | 651ms | 650ms | 9.2ms | 6.5ms
+Depth 2 | 1.5s | 1.5s | 2.6s | 1.3s
+Depth 3 | 2.5s | 2.5s | 6.7s | 447ms
+Depth 4 | 5.6s | 5.2s | 3.3s | 2.3s
+Depth 5 | 11s | 10.7s | 39s | 28s
+Job | 73ms | 47ms | 546ms | 397ms
+Name | 45ms | 45ms | 265ms | 249ms
+Birthday | 52ms | 52ms | 320ms | 297ms
+Endorsing count | 9.3s | 9.3s | 16s | 16s
+Endorsment count | 11.8s | 12.2s | 17s | 17s
 
 
 
