@@ -81,11 +81,12 @@ wget -O - https://raw.githubusercontent.com/DanielHauge/DBEX9/master/RunNeo4JWit
 ```
 - Step 5a. Run the benchmarking application
 ```
-sudo docker run
+sudo docker run -it --link psql --link neo4j danielhauge/dbex9
 ```
-- Step 5b. Run the benchmarking application detached to file
+- Step 5b. Run the benchmarking application detached to file (Let it run until container has exit)
 ```
-sudo docker run
+sudo docker run -dit --link psql --link neo4j danielhauge/dbex9 >> outputfile
+```
 
 #### Executions
 To experiment, i've developed a simple benchmarking program in golang. With functions to integrate with both neo4j and sql with similar inputs and outputs. Note, that results will also affect which given language is used. It should be noted that Neo4j does not have a official driver for golang, therefor the results does not apply 100% to all circumstances in integration of every language.
@@ -112,8 +113,7 @@ Endorsment count | 13.5s | 13.5s | N/A | N/A
 
 Disregarding missing data. We can stil see very promising results when it comes to finding nested relations. As hypothesized, the sql database seems slower when it comes to finding the relations by relationships. Neo4j is many times faster for 1,2 and 3 depth, but is starting to halt on the 4th, and crashed on the 5h level. I suspect that the level 4 query on neo4j is alot faster, but because of ram and memory shortage it is starting to halt, but also because it wasn't distincting persons.
 
-#### Second Experiments
-note: In this experiment, the go program has been run on the local machine up against the databases which is on the virtual machine, both databases is running in different docker containers on the same virtual machine.
+#### 2: Neo4j query upgade + Ram upgrade
 
 See [Secondtest output gist]()
 
