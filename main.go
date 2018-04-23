@@ -121,7 +121,7 @@ func main(){
 	fmt.Println("Neo4j - Experiement:  All persons that has a specific amount of endorsments..")
 	dur = ExperimentIntQuery(EndorsmentCount, NeoEndorsment)
 	PrintStats(dur)
-	
+
 
 
 }
